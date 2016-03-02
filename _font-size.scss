@@ -1,0 +1,39 @@
+@function fromRemToPixel( $rem ){
+  $rem: $rem / ($rem * 0 + 1);
+  @return #{$rem * 16}px;
+}
+@function fromPixelToRem( $pixel ){
+  @return #{$pixel / 16px}rem;
+}
+
+@function typeOfUnit( $size ){
+  $unit: str-slice(#{$size}, -3);
+  $unit: to-lower-case($unit);
+
+  @if  $unit != 'rem' {
+    $unit: str-slice(#{$size}, -2);
+    $unit: to-lower-case($unit);
+  }
+  @return $unit;
+}
+
+@mixin fontSizeFromPixel( $pixelSize ){
+  font-size: $pixelSize;
+  font-size: fromPixelToRem( $pixelSize );
+}
+
+@mixin fontSizeFromRem( $remSize ){
+  font-size: fromRemToPixel( $remSize );
+  font-size: $remSize;
+}
+
+@mixin fontSize($size) {
+
+  $unit: typeOfUnit( $size );
+
+  @if $unit == 'px' {
+    @include fontSizeFromPixel($size);
+  } @else if( $unit == 'rem' ) {
+    @include fontSizeFromRem($size);
+  }
+}
