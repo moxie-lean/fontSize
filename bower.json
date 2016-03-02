@@ -1,0 +1,25 @@
+{
+  "name": "fontSize",
+  "homepage": "https://github.com/moxie-leean/fontSize",
+  "authors": [
+    "Crisoforo Gaspar Hernandez <hello@crisoforo.com>"
+  ],
+  "description": "Sass mixing to generate a fontSize on pixels and rems",
+  "main": "_font-size.scss",
+  "moduleType": [],
+  "keywords": [
+    "sass",
+    "mixin",
+    "font-size",
+    "pixels",
+    "rem"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
