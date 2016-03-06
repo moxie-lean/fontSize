@@ -6,7 +6,6 @@
   ],
   "description": "Sass mixing to generate a fontSize on pixels and rems",
   "main": "_font-size.scss",
-  "moduleType": [],
   "keywords": [
     "sass",
     "mixin",
